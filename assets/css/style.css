@@ -1550,3 +1550,55 @@ section {
   font-size: 13px;
   color: #fff;
 }
+.contact .php-email-form #error_Msge {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+}
+.contact .php-email-form #errorEmail {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+}
+.contact .php-email-form #errorMessage {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+  
+}
+.errorContact {
+    width: 100%;
+    /* margin-top: 10px;
+    margin-bottom: 20px; */
+    border-radius: 2%;
+    background-color: #dc3545;
+    color: #f0f0f0;
+    padding: 10px;
+    display: none;
+  }
+.error-msg {
+    width: 100%;
+    /* margin-top: 10px;
+    margin-bottom: 20px; */
+    border-radius: 2%;
+    background-color: #dc3545;
+    color: #f0f0f0;
+    padding: 10px;
+    display: none;
+  }
+  .success-msg {
+    width: 100%;
+    /* margin-top: 10px;
+    margin-bottom: 20px; */
+    border-radius: 2%;
+    background-color: #28a745;
+    color: #f0f0f0;
+    padding: 10px;
+    display: none;
+  }
