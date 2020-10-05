@@ -334,7 +334,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+.portfolio-details-carousel #hero {
   width: 100%;
   height: calc(100vh - 72px);
   background: url("../img/hero-bg.jpg") center center;
@@ -415,7 +415,174 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
   }
 }
+/*--------------------------------------------------------------
+# HeroLicensing Section
+--------------------------------------------------------------*/
+.portfolio-details-carousel #heroLicensing {
+  width: 100%;
+  height: calc(100vh - 72px);
+  background: url("../img/law.jpg") center center;
+  background-size: cover;
+  position: relative;
+  margin-top: 72px;
+  padding: 0;
+}
 
+#heroLicensing:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#heroLicensing .container {
+  z-index: 2;
+}
+
+#heroLicensing h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+}
+
+#heroLicensing h3 {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 35px;
+  font-size: 24px;
+}
+
+#heroLicensing .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#heroLicensing .btn-get-started:hover {
+  border-color: #1bac91;
+  background: #1bac91;
+}
+
+@media (min-width: 1024px) {
+  #heroLicensing {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 992px) {
+  #heroLicensing {
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 768px) {
+  #heroLicensing h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #heroLicensing h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+/*--------------------------------------------------------------
+# HeroLicensing Section
+--------------------------------------------------------------*/
+.portfolio-details-carousel #heroMember {
+  width: 100%;
+  height: calc(100vh - 72px);
+  background: url("../img/membersh.jpg") center center;
+  background-size: cover;
+  position: relative;
+  margin-top: 72px;
+  padding: 0;
+}
+
+#heroMember:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#heroMember .container {
+  z-index: 2;
+}
+
+#heroMember h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+}
+
+#heroMember h3 {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 35px;
+  font-size: 24px;
+}
+
+#heroMember .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#heroMember .btn-get-started:hover {
+  border-color: #1bac91;
+  background: #1bac91;
+}
+
+@media (min-width: 1024px) {
+  #heroMember {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 992px) {
+  #heroMember {
+    margin-top: 60px;
+    height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 768px) {
+  #heroMember h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #heroMember h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -524,7 +691,7 @@ section {
   color: #1bac91;
 }
 
-.about .icon-box h4 {
+.about .icon-box h5 {
   font-size: 22px;
   font-weight: 500;
   margin-left: 60px;
@@ -532,7 +699,7 @@ section {
 }
 
 .about .icon-box p {
-  font-size: 15px;
+  font-size: 18px;
   color: #848484;
   margin-left: 60px;
 }
@@ -572,7 +739,7 @@ section {
 
 .steps .content-item p {
   color: #aaaaaa;
-  font-size: 15px;
+  font-size: 17px;
   margin: 0;
   padding: 0;
 }
