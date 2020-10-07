@@ -360,8 +360,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 56px;
   color: #fff;
 }
@@ -369,7 +369,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero h3 {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 35px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 #hero .btn-get-started {
@@ -406,10 +406,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   #hero h1 {
-    font-size: 28px;
+    font-size: 25px;
     line-height: 36px;
   }
-  #hero h2 {
+  #hero h3 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
@@ -444,8 +444,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #heroLicensing h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 56px;
   color: #fff;
 }
@@ -453,7 +453,7 @@ h1, h2, h3, h4, h5, h6 {
 #heroLicensing h3 {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 35px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 #heroLicensing .btn-get-started {
@@ -490,10 +490,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   #heroLicensing h1 {
-    font-size: 28px;
+    font-size: 25px;
     line-height: 36px;
   }
-  #heroLicensing h2 {
+  #heroLicensing h3 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
@@ -528,8 +528,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #heroMember h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 600;
   line-height: 56px;
   color: #fff;
 }
@@ -537,7 +537,7 @@ h1, h2, h3, h4, h5, h6 {
 #heroMember h3 {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 35px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 #heroMember .btn-get-started {
@@ -574,10 +574,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   #heroMember h1 {
-    font-size: 28px;
+    font-size: 25px;
     line-height: 36px;
   }
-  #heroMember h2 {
+  #heroMember h3 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
@@ -601,7 +601,7 @@ section {
 }
 
 .section-title h2 {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 300;
   margin-bottom: 20px;
   padding-bottom: 0;
@@ -676,32 +676,29 @@ section {
 # About
 --------------------------------------------------------------*/
 .about h3 {
-  font-weight: 400;
-  font-size: 34px;
+  font-weight: 300;
+  font-size: 24px;
+  margin-left: 30px;
   color: #21413c;
 }
-
+.about .row-bottom-margin {
+  padding: 0;
+}
 .about .icon-box {
-  margin-top: 44px;
+  margin-top: 25px;
 }
 
 .about .icon-box i {
-  font-size: 48px;
+  font-size: 40px;
+  margin-left: 30px;
   float: left;
   color: #1bac91;
 }
 
-.about .icon-box h5 {
-  font-size: 22px;
-  font-weight: 500;
-  margin-left: 60px;
-  color: #21413c;
-}
-
 .about .icon-box p {
-  font-size: 18px;
+  font-size: 17px;
   color: #848484;
-  margin-left: 60px;
+  margin-left: 80px;
 }
 
 /*--------------------------------------------------------------
@@ -714,7 +711,13 @@ section {
 .steps .row {
   overflow: hidden;
 }
-
+.steps .steps-title {
+  text-align: center;
+}
+.steps .steps-title h2 {
+  font-size: 24px;
+  font-weight: 300;
+}
 .steps .content-item {
   padding: 40px;
   border-left: 1px solid #d4e9e6;
@@ -755,7 +758,14 @@ section {
 .counts {
   padding-bottom: 30px;
 }
-
+.counts .counts-title {
+  padding-bottom: 14px;
+}
+.counts .counts-title h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 13px;
+}
 .counts .count-box {
   box-shadow: 0px 0 16px rgba(0, 0, 0, 0.1);
   padding: 30px;
@@ -907,6 +917,10 @@ section {
   min-height: 320px;
 }
 
+.testimonials .testimonials-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
   border-radius: 50%;
@@ -1207,11 +1221,13 @@ section {
 
 .portfolio-details .portfolio-description h2 {
   width: 50%;
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 300;
   margin-bottom: 20px;
 }
-
+option[value=""][disabled] {
+  display: none;
+}
 .portfolio-details .portfolio-description p {
   padding: 0 0 0 0;
 }
@@ -1402,6 +1418,11 @@ section {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
+.contact .contact-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 .contact .info i {
   font-size: 20px;
   color: #1bac91;
@@ -1418,8 +1439,8 @@ section {
 
 .contact .info h4 {
   padding: 0 0 0 60px;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 300;
   margin-bottom: 5px;
   color: #21413c;
 }
@@ -1739,16 +1760,62 @@ section {
   color: #ed3c0d;
   
 }
+.contact .php-email-form #nameErrorMember {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+
+}
+.contact .php-email-form #errorPhoneMember {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+  
+}
+.contact .php-email-form #errorEmailMember {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+  
+}
+.contact .php-email-form #errorTitleMember {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+  
+}
+.contact .php-email-form #errorAddressMember {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+  
+}
+.contact .php-email-form #errorTypeMember {
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+  display: none;
+  color: #ed3c0d;
+  
+}
 .errorContact {
     width: 100%;
-    /* margin-top: 10px;
-    margin-bottom: 20px; */
     border-radius: 2%;
     background-color: #dc3545;
     color: #f0f0f0;
     padding: 10px;
     display: none;
-  }
+}
 .error-msg {
     width: 100%;
     /* margin-top: 10px;
@@ -1769,3 +1836,33 @@ section {
     padding: 10px;
     display: none;
   }
+  #spinner:not([hidden]) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#spinner::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border: 2px solid #f3f3f3;
+  border-top: 3px solid #4ae3c6;
+  border-radius: 100%;
+  will-change: transform;
+  animation: spin 1s infinite linear
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

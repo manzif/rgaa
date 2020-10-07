@@ -141,7 +141,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>BECOME A MEMBER</h2>
+          <h2>Become a member</h2>
           <p>Join an industry wide movement drive innovation, seize new opportunities, set and discuss industry
             priorities, engage
             with peer, and speak with one, powerful voice about social and economic benefits gaming industry delivers
@@ -153,53 +153,54 @@
             <form role="form" class="php-email-form">
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Company Name" />
-                  <div class="errorMsge" id="error_Msge">Name is Required</div>
+                  <input type="text" name="name" class="form-control" id="companyName" placeholder="Company Name" />
+                  <div class="nameErrorMember" id="nameErrorMember">Company Name is Required</div>
                 </div>
                 <div class="col-md-6 form-group">
                   <select class="form-control" id="companyType" placeholder="Company Type">
+                    <option value="" disabled selected>Select Company Category</option>
                     <option>Casino</option>
                     <option>Sports betting</option>
                     <option>Gaming machine</option>
                     <option>Internet Gaming</option>
                     <option>Lottery</option>
                   </select>
-                  <div class="errorMsge" id="errorEmail">Email is Required</div>
+                  <div class="errorTypeMember" id="errorTypeMember">Company Category is Required</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Company Address" />
-                  <div class="errorMsge" id="error_Msge">Name is Required</div>
+                  <input type="text" name="name" class="form-control" id="companyAddress"
+                    placeholder="Company Address" />
+                  <div class="errorAddressMember" id="errorAddressMember">Company Address is Required</div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" id="emailContact" name="email" id="email"
+                  <input type="text" class="form-control" id="companyTitle" name="companyTitle"
                     placeholder="Title" />
-                  <div class="errorMsge" id="errorEmail">Email is Required</div>
+                  <div class="errorTitleMember" id="errorTitleMember">Your Title is Required</div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Phone Number" />
-                  <div class="errorMsge" id="error_Msge">Title is Required</div>
+                  <input type="text" name="name" class="form-control" id="phoneNumber" placeholder="Phone Number" />
+                  <div class="errorPhoneMember" id="errorPhoneMember">phoneNumber is Required</div>
                 </div>
                 <div class="col-md-6 form-group">
-                  <input type="email" class="form-control" id="emailContact" name="email" id="email"
+                  <input type="email" class="form-control" id="companyEmail" name="email" id="email"
                     placeholder="Email" />
-                  <div class="errorMsge" id="errorEmail">Email is Required</div>
+                  <div class="errorEmailMember" id="errorEmailMember">Email is Required</div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" id="subjectContact" name="subject" id="subject"
+                <input type="text" class="form-control" id="companyWebsite" name="subject" id="subject"
                   placeholder="Company Website" />
               </div>
               <div class="mb-3">
                 <div id="errorContact" class="errorContact"></div>
-                <div id="success-msg" class="success-msg">Your message has been sent. Thank you!</div>
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
+                <div id="success-msg" class="success-msg">Your membership is successful. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit" id="test">Register</button></div>
+              <div class="text-center"><button type="submit" id="test">Register<div hidden id="spinner"></div></button>
+              </div>
             </form>
           </div>
 
@@ -220,9 +221,9 @@
             <div class="footer-info">
               <h3>RGAA</h3>
               <p>
-                KK 6 <br>
-                AVE, KICUKIRO<br><br>
-                <strong>Phone:</strong> +250 781 775 455<br>
+                KK, <br>
+                6 AVE, KICUKIRO<br><br>
+                <strong>Phone:</strong> +250 788 231 206<br>
                 <strong>Email:</strong> info@rgaa.org.rw<br>
               </p>
               <div class="social-links mt-3">
@@ -293,6 +294,117 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("submit", sendData);
+    document.getElementById("test").addEventListener("click", sendMember, true);
+    function sendData(e) {
+      e.preventDefault();
+      const email = document.getElementById("emailSubscriber").value;
+      let error_msg = document.getElementById('error-msg');
+      let success_msg = document.getElementById('success-msg');
+      fetch("https://rgaa-server.herokuapp.com/api/subscribers", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log('\n\n\n\n\n', data)
+          if (data.status !== 201) {
+            error_msg.style.display = 'block';
+            success_msg.style.display = 'none';
+            error_msg.innerHTML = data.message;
+          } else {
+            success_msg.style.display = 'block';
+            error_msg.style.display = 'none';
+            success_msg.innerHTML = data.message;
+          }
+        })
+        .catch(err => console.log(err));
+    }
+
+    function sendMember(e) {
+      e.preventDefault();
+      const name = document.getElementById("companyName").value;
+      const email = document.getElementById("companyEmail").value;
+      const type = document.getElementById("companyType").value;
+      const website = document.getElementById("companyWebsite").value;
+      const owner = document.getElementById("companyTitle").value;
+      const address = document.getElementById("companyAddress").value;
+      const phoneNumber = document.getElementById("phoneNumber").value;
+      let nameErrorMember = document.getElementById('nameErrorMember');
+      let errorTypeMember = document.getElementById('errorTypeMember');
+      let errorEmailMember = document.getElementById('errorEmailMember');
+      let errorPhoneMember = document.getElementById('errorPhoneMember');
+      let errorTitleMember = document.getElementById('errorTitleMember');
+      let errorAddressMember = document.getElementById('errorAddressMember');
+      let errorContact = document.getElementById('errorContact');
+      let success_msg = document.getElementById('success-msg');
+      const spinner = document.getElementById("spinner");
+
+      if (name === "") {
+        return nameErrorMember.style.display = 'block';
+      }
+      if (type === "") {
+        return errorTypeMember.style.display = 'block';
+      }
+      if (address === "") {
+        return errorAddressMember.style.display = 'block';
+      }
+      if (owner === "") {
+        return errorTitleMember.style.display = 'block';
+      }
+      if (phoneNumber === "") {
+        return errorPhoneMember.style.display = 'block';
+      }
+      if (email === "") {
+        return errorEmailMember.style.display = 'block';
+      }
+      spinner.removeAttribute('hidden');
+      fetch("https://rgaa-server.herokuapp.com/api/members", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email,
+          type,
+          name,
+          phoneNumber,
+          website,
+          address,
+          owner
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log('\n\n\n\n\n', data)
+          spinner.setAttribute('hidden', '');
+          if (data.status !== 201) {
+            errorContact.style.display = 'block';
+            success_msg.style.display = 'none';
+            errorContact.innerHTML = data.message;
+          } else {
+            success_msg.style.display = 'block';
+            errorContact.style.display = 'none';
+            nameErrorMember.style.display = 'none';
+            errorAddressMember.style.display = 'none';
+            errorTypeMember.style.display = 'none';
+            errorTitleMember.style.display = 'none';
+            errorPhoneMember.style.display = 'none';
+            errorEmailMember.style.display = 'none';
+          }
+        })
+        .catch(err => console.log(err));
+    }
+  </script>
+
 
 </body>
 
