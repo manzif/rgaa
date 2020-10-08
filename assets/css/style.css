@@ -330,11 +330,165 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: calc(100vh - 72px);
+  position: relative;
+  margin-top: 72px;
+  padding: 0;
+  width: 100%;
+  /* height: calc(100vh - 114px); */
+  /* padding: 0;
+  overflow: hidden; */
+}
+
+#hero .carousel-item {
+  width: 100%;
+  height: calc(100vh - 114px);
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#hero .carousel-item::before {
+  content: '';
+  background-color: rgba(13, 30, 45, 0.6);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#hero .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+#hero .carousel-content {
+  text-align: left;
+}
+
+@media (max-width: 992px) {
+  #hero, #hero .carousel-item {
+    height: calc(100vh - 70px);
+  }
+  #hero .carousel-content.container {
+    padding: 0 50px;
+  }
+}
+
+#hero h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 38px;
+  font-weight: 900;
+}
+
+#hero p {
+  width: 80%;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  color: #fff;
+}
+
+#hero .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  opacity: 0;
+}
+
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-left,
+#hero .carousel-inner .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#hero .carousel-inner .carousel-item-next,
+#hero .carousel-inner .carousel-item-prev,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+#hero .carousel-control-prev, #hero .carousel-control-next {
+  width: 10%;
+}
+
+#hero .carousel-control-next-icon, #hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 48px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+
+#hero .carousel-indicators li {
+  cursor: pointer;
+}
+
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+#hero .btn-get-started:hover {
+  border-color: #1bac91;
+  background: #1bac91;
+}
+
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero p {
+    width: 60%;
+  }
+  #hero .carousel-control-prev, #hero .carousel-control-next {
+    width: 5%;
+  }
+}
 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.portfolio-details-carousel #hero {
+/* .portfolio-details-carousel #hero {
   width: 100%;
   height: calc(100vh - 72px);
   background: url("../img/hero-bg.jpg") center center;
@@ -343,7 +497,23 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 72px;
   padding: 0;
 }
+#hero .owl-nav, .portfolio-details-carousel .owl-dots {
+  margin-top: 5px;
+  text-align: left;
+}
 
+#hero .owl-dot {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd !important;
+}
+
+#hero .owl-dot.active {
+  background-color: #1bac91 !important;
+}
 #hero:before {
   content: "";
   background: rgba(0, 0, 0, 0.4);
@@ -414,7 +584,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 24px;
     margin-bottom: 30px;
   }
-}
+} */
 /*--------------------------------------------------------------
 # HeroLicensing Section
 --------------------------------------------------------------*/
@@ -500,90 +670,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 /*--------------------------------------------------------------
-# HeroLicensing Section
---------------------------------------------------------------*/
-.portfolio-details-carousel #heroMember {
-  width: 100%;
-  height: calc(100vh - 72px);
-  background: url("../img/membersh.jpg") center center;
-  background-size: cover;
-  position: relative;
-  margin-top: 72px;
-  padding: 0;
-}
-
-#heroMember:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#heroMember .container {
-  z-index: 2;
-}
-
-#heroMember h1 {
-  margin: 0 0 10px 0;
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 56px;
-  color: #fff;
-}
-
-#heroMember h3 {
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 35px;
-  font-size: 22px;
-}
-
-#heroMember .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 28px;
-  border-radius: 4px;
-  transition: 0.5s;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-#heroMember .btn-get-started:hover {
-  border-color: #1bac91;
-  background: #1bac91;
-}
-
-@media (min-width: 1024px) {
-  #heroMember {
-    background-attachment: fixed;
-  }
-}
-
-@media (max-width: 992px) {
-  #heroMember {
-    margin-top: 60px;
-    height: calc(100vh - 60px);
-  }
-}
-
-@media (max-width: 768px) {
-  #heroMember h1 {
-    font-size: 25px;
-    line-height: 36px;
-  }
-  #heroMember h3 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
-  }
-}
-/*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
 section {
@@ -610,6 +696,8 @@ section {
 
 .section-title p {
   margin-bottom: 0;
+  text-align: left;
+
 }
 
 /*--------------------------------------------------------------
@@ -700,7 +788,28 @@ section {
   color: #848484;
   margin-left: 80px;
 }
+/*--------------------------------------------------------------
+# Mission
+--------------------------------------------------------------*/
+.mission h3 {
+  font-weight: 300;
+  font-size: 24px;
+  margin-top: 25px;
+  margin-left: 30px;
+  color: #21413c;
+}
+.mission .row-bottom-margin {
+  padding: 0;
+}
+.mission .icon-box {
+  margin-top: 35px;
+}
 
+.mission .icon-box p {
+  font-size: 17px;
+  color: #848484;
+  margin-left: 30px;
+}
 /*--------------------------------------------------------------
 # Steps
 --------------------------------------------------------------*/
@@ -749,6 +858,58 @@ section {
 
 @media (max-width: 768px) {
   .steps .content-item {
+    padding: 40px 0;
+  }
+}
+/*--------------------------------------------------------------
+# regulation
+--------------------------------------------------------------*/
+.regulation {
+  padding: 50px 0 40px 0;
+  text-align: center;
+}
+
+.regulation .row {
+  overflow: hidden;
+}
+.regulation .regulation-title {
+  text-align: center;
+}
+.regulation .regulation-title h2 {
+  font-size: 24px;
+  font-weight: 300;
+}
+.regulation .content-item {
+  padding: 20px;
+  border-left: 2px solid #d4e9e6;
+  border-bottom: 2px solid #d4e9e6;
+  /* margin: -1px; */
+}
+
+.regulation .content-item span {
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+  color: #1bac91;
+}
+
+.regulation .content-item h4 {
+  font-size: 28px;
+  font-weight: 400;
+  padding: 0;
+  /* margin: 20px 0; */
+  color: #21413c;
+}
+
+.regulation .content-item p {
+  color: #aaaaaa;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .regulation .content-item {
     padding: 40px 0;
   }
 }
@@ -1231,7 +1392,18 @@ option[value=""][disabled] {
 .portfolio-details .portfolio-description p {
   padding: 0 0 0 0;
 }
-
+.portfolio-description .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  border: 2px solid #1bac91;
+  color: #1bac91;
+}
 @media (max-width: 768px) {
   .portfolio-details .portfolio-description h2 {
     width: 100%;
@@ -1865,4 +2037,64 @@ option[value=""][disabled] {
   to {
     transform: rotate(360deg);
   }
+}
+/* advocacy Section
+--------------------------------*/
+#advocacy {
+  padding: 80px 0;
+}
+
+#advocacy h4 {
+  font-weight: 600;
+  font-size: 24px;
+}
+.advocacy #regulation-advo{
+  margin-top: 50px;
+}
+.advocacy #illegal-advo{
+  padding-top: 30px;
+}
+.advocacy #regulation-advo{
+  padding-top: 60px;
+}
+.advocacy #modern-advo{
+  padding-top: 60px;
+}
+.advocacy #business-advo{
+  padding-top: 70px;
+}
+.advocacy .advocacy-item .advocaylice{
+  margin-top: 80px;
+}
+.advocacy .advocacy-item #advocayregu{
+  margin-top: 50px;
+}
+.advocacy .advocacy-item #advocay-gaming{
+  margin-top: 60px;
+}
+.advocacy .advocacy-item #advocay-modern{
+  margin-top: 70px;
+}
+.advocacy .advocacy-item #modern-advo{
+  margin-top: 70px;
+}
+.advocacy .advocacy-item #advo-business{
+  margin-top: 70px;
+}
+
+/* gambling-tourisim Section
+--------------------------------*/
+#gambling-tourisim {
+  padding: 80px 0;
+}
+
+#gambling-tourisim h4 {
+  font-weight: 600;
+  font-size: 24px;
+}
+.gambling-tourisim #gambling-tourisim-1{
+  margin-top: 50px;
+}
+.gambling-tourisim #gambling-tourisim-2{
+  margin-top: 40px;
 }

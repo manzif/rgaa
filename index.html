@@ -23,6 +23,7 @@
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.theme.default.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
@@ -54,7 +55,7 @@
           <li class="active"><a href="index.html">Home</a></li>
           <li class="drop-down"><a href="">About Us</a>
             <ul>
-              <li><a href="#about">Mission</a></li>
+              <li><a href="#mission">Mission</a></li>
               <li><a href="#about">Objectives</a></li>
               <li><a href="#steps">Activities</a></li>
               <li><a href="#team">Our Board</a></li>
@@ -66,21 +67,12 @@
           </li>
           <li class="drop-down"><a href="">Advocacy</a>
             <ul>
-
-              <!-- <li class="drop-down"><a href="#">Licensing</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li> -->
-              <li><a href="licensing.html">Licensing</a></li>
-              <li><a href="illegal-gaming.html">Illegal Gambling</a></li>
-              <li><a href="regulations-tax.html">Regulations and Gaming Tax</a></li>
-              <li><a href="modern-gambling.html">Modern Gambling</a></li>
-              <li><a href="applicable-business.html">Applicable business issues</a></li>
+              <li><a href="advocacy.html">Licensing</a></li>
+              <li><a href="advocacy.html#illegal-advo">Illegal Gambling</a></li>
+              <li><a href="advocacy.html#regulation-advo">Regulations</a></li>
+              <li><a href="advocacy.html#tax-advo">Gaming Tax</a></li>
+              <li><a href="advocacy.html#modern-advo">Modern Gambling</a></li>
+              <li><a href="advocacy.html#business-advo">Applicable business issues</a></li>
             </ul>
           </li>
           <li class="drop-down"><a href="">Rwanda market</a>
@@ -110,42 +102,102 @@
 
     </div>
   </header><!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
-  <div class="owl-carousel portfolio-details-carousel">
-    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-      <!-- <div class="owl-carousel portfolio-details-carousel"> -->
-      <div class="container text-center text-md-left" data-aos="fade-up">
-        <h1>Welcome to Rwanda Gaming Association</h1>
-        <h3>The Rwanda Gaming Association is the unique body of all gaming and gambling operators in Rwanda. It is a
-          private sector
-          initiative that operates under the auspices of Private Sector Federation of Rwanda.</h3>
-        <a href="membership.html" class="btn-get-started scrollto">Become a member</a>
-      </div>
-      <!-- </div> -->
-    </section>
-    <section id="heroLicensing" class="d-flex flex-column justify-content-center align-items-center">
-      <div class="container text-center text-md-left" data-aos="fade-up">
-        <h1>Advocacy</h1>
-        <h3>RGAA plays the role of bridge between gaming operators, regulatory authority and other stakeholders,
-          therefore it
-          advocates its members when it comes to license renewal, disciplinary matters and compliance.</h3>
-        <a href="advocacy.html" class="btn-get-started scrollto">Read more</a>
-      </div>
-    </section>
-    <section id="heroMember" class="d-flex flex-column justify-content-center align-items-center">
-      <div class="container text-center text-md-left" data-aos="fade-up">
-        <h1>Membership</h1>
-        <h3>To know more about the membership please click on the link below</h3>
-        <a href="membership.html" class="btn-get-started scrollto">Read more</a>
-      </div>
-    </section>
-  </div>
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url('assets/img/hero-bg.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to Rwanda Gaming Association</h2>
+                <p class="animate__animated animate__fadeInUp">The Rwanda Gaming Association is the unique body of all
+                  gaming and gambling operators in Rwanda. It is a
+                  private sector
+                  initiative that operates under the auspices of Private Sector Federation of Rwanda.</p>
+                <a href="membership.html" class="btn-get-started animate__animated animate__fadeInUp scrollto">Become a
+                  member</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url('assets/img/advocay.png');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">Advocacy</h2>
+                <p class="animate__animated animate__fadeInUp">RGAA plays the role of bridge between gaming operators,
+                  regulatory authority and other stakeholders,
+                  therefore it
+                  advocates its members when it comes to license renewal, disciplinary matters and compliance.</p>
+                <a href="advocacy.html" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+                  More</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url('assets/img/membersh.jpg');">
+            <div class="carousel-container">
+              <div class="carousel-content container">
+                <h2 class="animate__animated animate__fadeInDown">Membership</h2>
+                <p class="animate__animated animate__fadeInUp">We are unified operators in Rwanda gaming industry
+                  including Casino, Sports Betting, Gaming Machines, iGaming
+                  and
+                  Lottery, working together to contribute to the growth of gaming industry in Rwanda.</p>
+                <a href="membership.html" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+                  More</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon icofont-rounded-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon icofont-rounded-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
   <!-- End Hero -->
 
   <main id="main">
 
+    <!-- ======= About Section ======= -->
+    <section id="mission" class="mission">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0 row-bottom-margin">
+
+            <h3 data-aos="fade-up">Mission</h3>
+            <div class="icon-box" data-aos="fade-up">
+              <p>The aims and objectives of RGAA are to advance the collective interests of its members, especially with
+                regard to the
+                Gaming Regulatory Authority, Rwanda institutions and to enhance the capability, common knowledge and
+                status of
+                individual members.</p>
+            </div>
+
+          </div>
+          <div class="col-xl-6 col-lg-7" data-aos="fade-right">
+            <img src="assets/img/bigbet.jpg" class="img-fluid" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
@@ -419,9 +471,12 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Testimonials</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, cum accusantium soluta, voluptatum
-            culpa accusamus placeat eius ad nam expedita illo et, id non aperiam! Aperiam doloremque soluta minus
-            consequuntur!</p>
+          <p>Gaming has been around for centuries and just like many other things has got its positive and negative
+            sides. But most
+            of people choose to neglect its brighter side and often focus on the negative side of how dangerous it is
+            financially
+            for the gamblers. These testimonials will help you see how this impacts positively on society and economic
+            in general.</p>
         </div>
 
         <div class="owl-carousel testimonials-carousel" data-aos="fade-up">
@@ -663,9 +718,9 @@
 
         <div class="section-title" data-aos="fade-up">
           <h2>Our Board</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, corporis magni ea saepe, perferendis modi
-            provident sint dignissimos, minus architecto alias vitae maxime nam iusto corrupti. Ducimus quo perferendis
-            iure.</p>
+          <p>The executive committee is composed of at least five board members appointed by the general assembly
+            meeting. It will
+            serve for a term of three years and may be reelected one or more times for terms of the same duration.</p>
         </div>
 
         <div class="row">
@@ -854,13 +909,13 @@
               <div class="email mt-4">
                 <i class="icofont-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@rwandagamingassociation.org</p>
+                <p>info@rgaa.org.rw</p>
               </div>
 
               <div class="phone mt-4">
                 <i class="icofont-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>+250 788 231 206</p>
               </div>
 
             </div>
