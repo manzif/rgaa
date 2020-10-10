@@ -44,15 +44,15 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html">RGAA</a></h1>
+        <!-- <h1 class="text-light"><a href="index.html">RGAA</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href="index.html"><img src="assets/img/RGAA Logo-02.svg" alt="" class="img-fluid"></a>
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="photos-videos.html">Photos and Videos</a></li>
+          <li class="active disabled"><a href="photos-videos.html">Photos and Videos</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -170,7 +170,7 @@
             <div id="error-msg" class="error-msg"></div>
             <div id="success-msg" class="success-msg"></div>
             <form>
-              <input type="email" name="email" id="emailSubscriber"><input type="submit" id="submitS" value="Subscribe">
+              <input type="email" name="email" id="emailSubscriber"><input type="submit" value="Subscribe" id="submitS">
             </form>
 
           </div>
@@ -184,10 +184,6 @@
         &copy; Copyright <strong><span>RGAA</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/ -->
         Made by <a href="https://transax.rw/">Transax Ltd</a>
       </div>
     </div>
@@ -207,6 +203,40 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("submit", sendData);
+    document.getElementById("test").addEventListener("click", sendMessage, true);
+    function sendData(e) {
+      e.preventDefault();
+      const email = document.getElementById("emailSubscriber").value;
+      let error_msg = document.getElementById('error-msg');
+      let success_msg = document.getElementById('success-msg');
+      fetch("https://rgaa-server.herokuapp.com/api/subscribers", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log('\n\n\n\n\n', data)
+          if (data.status !== 201) {
+            error_msg.style.display = 'block';
+            success_msg.style.display = 'none';
+            error_msg.innerHTML = data.message;
+          } else {
+            success_msg.style.display = 'block';
+            error_msg.style.display = 'none';
+            success_msg.innerHTML = data.message;
+          }
+        })
+        .catch(err => console.log(err));
+    }
+  </script>
 
 </body>
 
