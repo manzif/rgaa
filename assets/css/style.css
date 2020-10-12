@@ -2008,6 +2008,16 @@ option[value=""][disabled] {
     padding: 10px;
     display: none;
   }
+  .successSubscriber {
+    width: 100%;
+    /* margin-top: 10px;
+    margin-bottom: 20px; */
+    border-radius: 2%;
+    background-color: #28a745;
+    color: #f0f0f0;
+    padding: 10px;
+    display: none;
+  }
   #spinner:not([hidden]) {
   position: fixed;
   top: 0;
@@ -2029,7 +2039,27 @@ option[value=""][disabled] {
   will-change: transform;
   animation: spin 1s infinite linear
 }
+  #spinnerSubscriber:not([hidden]) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#spinnerSubscriber::after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border: 2px solid #4ae3c6;
+  border-top: 3px solid #4ae3c6;
+  border-radius: 100%;
+  will-change: transform;
+  animation: spin 1s infinite linear
+}
 @keyframes spin {
   from {
     transform: rotate(0deg);

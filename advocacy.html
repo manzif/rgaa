@@ -266,9 +266,10 @@
             <h4>Our Newsletter</h4>
             <p>Subscribe to our newsletter and stay updated on the latest developments</p>
             <div id="error-msg" class="error-msg"></div>
-            <div id="success-msg" class="success-msg"></div>
+            <div id="successSubscriber" class="successSubscriber"></div>
             <form>
-              <input type="email" name="email" id="emailSubscriber"><input type="submit" value="Subscribe" id="submitS">
+              <input type="email" name="email" id="emailSubscriber">
+              <div hidden id="spinnerSubscriber"></div><input type="submit" value="Subscribe" id="submitS">
             </form>
 
           </div>
@@ -292,14 +293,16 @@
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/  <script type="text/javascript">
+  <script src="assets/vendor/jquery.easing/  <script type=" text/javascript">
     document.addEventListener("submit", sendData);
     document.getElementById("test").addEventListener("click", sendMessage, true);
     function sendData(e) {
       e.preventDefault();
       const email = document.getElementById("emailSubscriber").value;
       let error_msg = document.getElementById('error-msg');
-      let success_msg = document.getElementById('success-msg');
+      let successSubscriber = document.getElementById('successSubscriber');
+      const spinnerSubscriber = document.getElementById("spinnerSubscriber");
+      spinnerSubscriber.removeAttribute('hidden');
       fetch("https://rgaa-server.herokuapp.com/api/subscribers", {
         method: "POST",
         headers: {
@@ -312,14 +315,15 @@
       })
         .then(res => res.json())
         .then(data => {
+          spinnerSubscriber.setAttribute('hidden', '');
           if (data.status !== 201) {
             error_msg.style.display = 'block';
-            success_msg.style.display = 'none';
+            successSubscriber.style.display = 'none';
             error_msg.innerHTML = data.message;
           } else {
-            success_msg.style.display = 'block';
+            successSubscriber.style.display = 'block';
             error_msg.style.display = 'none';
-            success_msg.innerHTML = data.message;
+            successSubscriber.innerHTML = data.message;
           }
         })
         .catch(err => console.log(err));
