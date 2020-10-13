@@ -2112,6 +2112,23 @@ option[value=""][disabled] {
   margin-top: 70px;
 }
 
+/* laws Section
+--------------------------------*/
+#laws {
+  padding: 80px 0;
+}
+
+#laws h4 {
+  font-weight: 600;
+  font-size: 24px;
+}
+.laws .laws-item .advocaylice{
+  margin-top: 60px;
+}
+.laws .laws-item .advocaylice p{
+  padding-top: 7px;
+}
+
 /* gambling-tourisim Section
 --------------------------------*/
 #gambling-tourisim {
